@@ -11,6 +11,9 @@ public class Mainframe extends JFrame{
 	private Label lab = new Label("Greedy snake");
 	private JButton jbtn = new JButton("start");
 	private JButton jbtnex = new JButton("Exit");
+	private JButton jbtnl = new JButton("初級");
+	private JButton jbtnc = new JButton("中級");
+	private JButton jbtnh = new JButton("高級");
 	private JPanel jp = new JPanel(new GridLayout(1,2,3,3));
 	private JPanel jp2 = new JPanel(new GridLayout(1,3,3,3));
 	private JPanel jpall = new JPanel(new GridLayout(2,1,1,1));
