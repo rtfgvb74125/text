@@ -14,9 +14,15 @@ public class Mainframe extends JFrame{
 	private JButton jbtnl = new JButton("初級");
 	private JButton jbtnc = new JButton("中級");
 	private JButton jbtnh = new JButton("高級");
+	private JButton jbtnup = new JButton("↑");
+	private JButton jbtndown = new JButton("↓");
+	private JButton jbtnleft = new JButton("←");
+	private JButton jbtnright = new JButton("→");
 	private JPanel jp = new JPanel(new GridLayout(1,2,3,3));
-	private JPanel jp2 = new JPanel(new GridLayout(1,3,3,3));
-	private JPanel jpall = new JPanel(new GridLayout(2,1,1,1));
+	private JPanel jplavel = new JPanel(new GridLayout(1,3,3,3));
+	private JPanel jpall = new JPanel(new GridLayout(3,1,1,1));
+	private JPanel jpc = new JPanel(new GridLayout (2,1,1,1));
+	private JPanel jpcd = new JPanel(new GridLayout(1,3,1,1));
 	private Font font1 = new Font(null,Font.PLAIN,30);
 	private Container cp;
 	
@@ -44,12 +50,18 @@ public class Mainframe extends JFrame{
 		cp.add(jpall, BorderLayout.SOUTH);
 		lab.setFont(font1);
 		jpall.add(jp);
-		jpall.add(jp2);
+		jpall.add(jplavel);
+		jpall.add(jpc);
+		jpc.add(jbtnup);
+		jpc.add(jpcd);
 		jp.add(jbtn);
 		jp.add(jbtnex);
-		jp2.add(jbtnl);
-		jp2.add(jbtnc);
-		jp2.add(jbtnh);
+		jplavel.add(jbtnl);
+		jplavel.add(jbtnc);
+		jplavel.add(jbtnh);
+		jpcd.add(jbtnleft);
+		jpcd.add(jbtndown);
+		jpcd.add(jbtnright);
 		
 	}
 }
