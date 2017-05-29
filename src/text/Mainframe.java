@@ -21,7 +21,7 @@ public class Mainframe extends JFrame{
 	protected JButton jbtnright = new JButton("→");
 	protected Label labsn[] = new Label[800];
 	protected String labsnLabel[]=new String[800];
-	protected JPanel jpmid = new JPanel(new GridLayout(20,40,1,1));//中間盤子
+	protected JPanel jpmid = new JPanel(new GridLayout(20,40,0,0));//中間盤子
 	protected JPanel jp = new JPanel(new GridLayout(1,2,3,3));//計算跟exit盤子
 	protected JPanel jplavel = new JPanel(new GridLayout(1,3,3,3));//級數盤子
 	protected JPanel jpall = new JPanel(new GridLayout(3,1,1,1));//裝jp跟jpleavel
@@ -29,6 +29,8 @@ public class Mainframe extends JFrame{
 	protected JPanel jpcd = new JPanel(new GridLayout(1,3,1,1));//↓ ← →的盤子
 	protected Font font1 = new Font(null,Font.PLAIN,30);
 	protected Container cp;
+	protected int direction = 0;
+	
 	
 	public Mainframe (){
 		init();
@@ -67,12 +69,12 @@ public class Mainframe extends JFrame{
 		jpcd.add(jbtndown);
 		jpcd.add(jbtnright);
 		
-		for(int i = 0;i<800;i++){
-			labsnLabel[i] = " ";
-		}
+//		for(int i = 0;i<800;i++){
+//			labsnLabel[i] = " ";
+//		}
 		for(int i = 0;i<800;i++){
 			labsn[i] = new Label(labsnLabel[i]);
-			labsn[i].setBackground(Color.white);
+			labsn[i].setBackground(Color.black);
 			for(int j = 795;j<800;j++){
 				labsn[j] = new Label(labsnLabel[i]);
 				labsn[j].setBackground(Color.blue);

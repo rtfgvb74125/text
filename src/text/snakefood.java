@@ -1,5 +1,5 @@
 package text;
 
-public class snakefood {
+public class Snakefood extends Snakecontor{
 
 }

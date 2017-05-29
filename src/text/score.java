@@ -1,5 +1,5 @@
 package text;
 
-public class score {
+public class Score extends Snakefood{
 
 }
