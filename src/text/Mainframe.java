@@ -228,7 +228,8 @@ public class Mainframe extends JFrame implements KeyListener {
 			data[0][1] = 0;
 
 			jlabsn[data[0][0]][data[0][1]].setBackground(Color.BLUE);
-
+			count = 0;
+			t = 60;
 		}
 		
 	}
