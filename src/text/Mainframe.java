@@ -24,7 +24,7 @@ public class Mainframe extends JFrame implements KeyListener {
 
 	private JLabel jlabsn[][] = new JLabel[20][30];
 	private int data[][] = new int[1][2];
-	private int dataf[][] = new int[6][2];
+	private int dataf[][] = new int[10][2];
 	private JPanel jpmid = new JPanel(new GridLayout(20, 30, 0, 0));// 中間盤子
 
 	private JPanel jplavel = new JPanel(new GridLayout(1, 2, 3, 3));// 級數盤子
@@ -42,7 +42,7 @@ public class Mainframe extends JFrame implements KeyListener {
 	private void init() {
 		this.setBounds(100, 100, 500, 500);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		lab.setBackground(Color.PINK);
+		lab.setBackground(new Color(136,0,255));
 		cp = this.getContentPane();
 		cp.setLayout(new BorderLayout(5, 5));
 		cp.add(lab, BorderLayout.NORTH);
@@ -85,6 +85,15 @@ public class Mainframe extends JFrame implements KeyListener {
 		dataf[4][1] = 4;
 		dataf[5][0] = 6;
 		dataf[5][1] = 6;
+		dataf[6][0] = 9;
+		dataf[6][1] = 12;
+		dataf[7][0] = 16;
+		dataf[7][1] = 17;
+		dataf[8][0] = 8;
+		dataf[8][1] = 15;
+		dataf[9][0] = 19;
+		dataf[9][1] = 20;
+		
 		for (int i = 0; i < 20; i++) {
 			for (int j = 0; j < 30; j++) {
 				jlabsn[i][j] = new JLabel();
@@ -94,9 +103,9 @@ public class Mainframe extends JFrame implements KeyListener {
 			}
 		}
 
-		// for(int i = 0;i<6;i++){
-		jlabsn[data[0][0]][data[0][1]].setBackground(Color.BLUE);
-		// }
+		
+		jlabsn[data[0][0]][data[0][1]].setBackground(new Color(255,255,255));
+		
 		
 
 	}
@@ -136,10 +145,16 @@ public class Mainframe extends JFrame implements KeyListener {
 			jlabsn[dataf[1][0]][dataf[1][1]].setBackground(Color.green);
 			jlabsn[dataf[2][0]][dataf[2][1]].setBackground(Color.red);
 			jlabsn[dataf[3][0]][dataf[3][1]].setBackground(Color.pink);
-			jlabsn[dataf[4][0]][dataf[4][1]].setBackground(Color.cyan);
+			jlabsn[dataf[4][0]][dataf[4][1]].setBackground(new Color(92,173,173));
 			jlabsn[dataf[5][0]][dataf[5][1]].setBackground(Color.orange);
+			jlabsn[dataf[6][0]][dataf[6][1]].setBackground(new Color(184,255,77));
+			jlabsn[dataf[7][0]][dataf[7][1]].setBackground(new Color(173, 214, 255));
+			jlabsn[dataf[8][0]][dataf[8][1]].setBackground(new Color(28, 253, 155));
+			jlabsn[dataf[9][0]][dataf[9][1]].setBackground(new Color(136, 0, 255));
 
-			jlabsn[data[0][0]][data[0][1]].setBackground(Color.BLUE);
+			jlabsn[data[0][0]][data[0][1]].setBackground(new Color(255,255,255));
+			
+			
 			if (data[0][0] == dataf[0][0] && data[0][1] == dataf[0][1]) {
 				dataf[0][0] = new Random().nextInt(20);
 				dataf[0][1] = new Random().nextInt(30);
@@ -164,6 +179,22 @@ public class Mainframe extends JFrame implements KeyListener {
 				dataf[5][0] = new Random().nextInt(20);
 				dataf[5][1] = new Random().nextInt(30);
 				count++;
+			}else if (data[0][0] == dataf[6][0] && data[0][1] == dataf[6][1]) {
+				dataf[6][0] = new Random().nextInt(20);
+				dataf[6][1] = new Random().nextInt(30);
+				count++;
+			}else if (data[0][0] == dataf[7][0] && data[0][1] == dataf[7][1]) {
+				dataf[7][0] = new Random().nextInt(20);
+				dataf[7][1] = new Random().nextInt(30);
+				count++;
+			}else if (data[0][0] == dataf[8][0] && data[0][1] == dataf[8][1]) {
+				dataf[8][0] = new Random().nextInt(20);
+				dataf[8][1] = new Random().nextInt(30);
+				count++;
+			}else if (data[0][0] == dataf[9][0] && data[0][1] == dataf[9][1]) {
+				dataf[9][0] = new Random().nextInt(20);
+				dataf[9][1] = new Random().nextInt(30);
+				count++;
 			}
 			lab6.setText(Integer.toString(count));
 
@@ -174,12 +205,12 @@ public class Mainframe extends JFrame implements KeyListener {
 			JOptionPane.showMessageDialog(null, "撞到牆惹啦!!!!傻B!!!");
 			if (count < 10) {
 				JOptionPane.showMessageDialog(null, "爛透了");
-			} else if (count > 20) {
+			} else if (count > 20 && count <30) {
 				JOptionPane.showMessageDialog(null, "普通貨色");
 
-			} else if (count > 40) {
+			} else if (count > 30 && count <50) {
 				JOptionPane.showMessageDialog(null, "快成為高手了");
-			} else if (count > 60) {
+			} else if (count > 50) {
 				JOptionPane.showMessageDialog(null, "您是高手");
 			}
 			JOptionPane.showMessageDialog(null, "獲得" + count + "分");
@@ -187,8 +218,8 @@ public class Mainframe extends JFrame implements KeyListener {
 			data[0][0] = 0;
 			data[0][1] = 0;
 
-			jlabsn[data[0][0]][data[0][1]].setBackground(Color.BLUE);
-
+			jlabsn[data[0][0]][data[0][1]].setBackground(new Color(255,255,255));
+			
 		}
 	}
 
@@ -215,19 +246,20 @@ public class Mainframe extends JFrame implements KeyListener {
 		if(t==0){
 			if (count < 10) {
 				JOptionPane.showMessageDialog(null, "爛透了");
-			} else if (count > 20) {
+			} else if (count > 20 && count<30) {
 				JOptionPane.showMessageDialog(null, "普通貨色");
 
-			} else if (count > 40) {
+			} else if (count > 40 && count<50) {
 				JOptionPane.showMessageDialog(null, "快成為高手了");
-			} else if (count > 60) {
+			} else if (count > 50 ) {
 				JOptionPane.showMessageDialog(null, "您是高手");
 			}
 			JOptionPane.showMessageDialog(null, "獲得" + count + "分");
 			data[0][0] = 0;
 			data[0][1] = 0;
 
-			jlabsn[data[0][0]][data[0][1]].setBackground(Color.BLUE);
+			jlabsn[data[0][0]][data[0][1]].setBackground(new Color(255,255,255));
+			
 			count = 0;
 			t = 60;
 		}
